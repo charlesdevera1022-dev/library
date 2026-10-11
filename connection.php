@@ -8,7 +8,7 @@ mysqli_report(MYSQLI_REPORT_OFF);
 
 $host = "sql106.infinityfree.com";
 $user = "h9HrcdjWqR";
-$password = "HIDDEN";
+$password = "h9HrcdjWqR";
 $database = "if0_43145712_librar";
 
 $conn = new mysqli($host, $user, $password, $database);
