@@ -9,7 +9,7 @@ mysqli_report(MYSQLI_REPORT_OFF);
 $host = "sql106.infinityfree.com";
 $user = "h9HrcdjWqR";
 $password = "h9HrcdjWqR";
-$database = "if0_43145712_librar";
+$database = "if0_43145712_library";
 
 $conn = new mysqli($host, $user, $password, $database);
 
