@@ -6,17 +6,19 @@ date_default_timezone_set('Asia/Manila');
 mysqli_report(MYSQLI_REPORT_OFF);            
 
 
-$servername = "localhost";
-$username   = "root";
-$password   = "";
-$database   = "library";
+$host = "sql106.infinityfree.com";
+$user = "h9HrcdjWqR";
+$password = "HIDDEN";
+$database = "if0_43145712_librar";
 
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = new mysqli($host, $user, $password, $database);
 
-if (!$conn) {
-    die("Connection Failed: " . mysqli_connect_error() . ". Check connection.php and make sure you imported database/schema.sql.");
+if ($conn->connect_error) {
+    error_log("Database connection error: " . $conn->connect_error);
+    die("Database connection failed. Please check your settings.");
 }
-mysqli_set_charset($conn, "utf8mb4");
+
+$conn->set_charset("utf8mb4");
 
 define("LOAN_DAYS", 7);    
 define("MAX_LOANS", 3);   

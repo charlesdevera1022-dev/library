@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $id = (int)$_POST['id'];
         $row = mysqli_fetch_assoc(run_query($conn, "SELECT COUNT(*) AS n FROM loans WHERE book_id = ?", "i", array($id)));
         if ($row['n'] > 0) {
-            // A book with loan records is kept, so the borrowing history is never lost.
+            
             set_message("danger", "This book has loan records and cannot be deleted.");
         } else {
             run_query($conn, "DELETE FROM books WHERE id = ?", "i", array($id));
